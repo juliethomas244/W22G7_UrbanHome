@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UrbanHomeApp">
         <activity
-            android:name=".SummaryActivity"
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".SummaryActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"

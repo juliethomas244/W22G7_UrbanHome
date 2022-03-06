@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
     GridView gridViewCategory;
     List<String> imgNames = new ArrayList<>(
             Arrays.asList("Chair","Bed","Table")
@@ -21,16 +21,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
 
         gridViewCategory = findViewById(R.id.gridViewCategory);
-        ImageAdapter imageAdapter = new ImageAdapter(imgNames, imgPics);
-        gridViewCategory.setAdapter(imageAdapter);
+        HomeAdapter homeAdapter = new HomeAdapter(imgNames, imgPics);
+        gridViewCategory.setAdapter(homeAdapter);
         gridViewCategory.setNumColumns(3);
         gridViewCategory.setVerticalSpacing(8);
         gridViewCategory.setHorizontalSpacing(8);
         gridViewCategory.setScrollBarSize(3);
-
     }
-
 }
