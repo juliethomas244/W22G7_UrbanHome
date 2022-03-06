@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     ImageView googleBtn;
     ImageView fbBtn;
     CallbackManager callbackManager;
-
+    Button changing;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
