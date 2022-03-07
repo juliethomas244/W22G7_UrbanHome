@@ -10,5 +10,10 @@
     <string name="facebook_client_token">d203c65861c11e855ad4c6a241ee7b85</string>
     <string name="textsigninother">or sign in with</string>
 
-
+    <string name="txtViewSumm">Summary</string>
+    <string name="textViewTotalItems">Items</string>
+    <string name="textViewPrice">Price</string>
+    <string name="textViewTotal">Total</string>
+    <string name="submitBtm">Submit</string>
+    <string name="textViewTotalCost">$Total cost</string>
 </resources>
