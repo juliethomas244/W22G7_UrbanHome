@@ -16,4 +16,7 @@
     <string name="textViewTotal">Total</string>
     <string name="submitBtm">Submit</string>
     <string name="textViewTotalCost">$Total cost</string>
+    <string name="textViewChairs">Chairs</string>
+    <string name="txtViewBeds">Beds</string>
+    <string name="textViewTables">Tables</string>
 </resources>
