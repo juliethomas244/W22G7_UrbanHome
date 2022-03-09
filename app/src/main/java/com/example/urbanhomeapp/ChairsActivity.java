@@ -27,8 +27,8 @@ public class ChairsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chairs);
         gridViewChairs = findViewById(R.id.gridViewChairs);
 
-        ChairAdapter chairAdapter = new ChairAdapter(itemDesc, itemPics);
-        gridViewChairs.setAdapter(chairAdapter);
+        CategoriesAdapter adapter = new CategoriesAdapter(itemDesc, itemPics);
+        gridViewChairs.setAdapter(adapter);
 
         gridViewChairs.setNumColumns(2);
         gridViewChairs.setVerticalSpacing(8);
