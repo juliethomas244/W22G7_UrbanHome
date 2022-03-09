@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UrbanHomeApp">
         <activity
+            android:name=".CheckoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".TablesActivity"
             android:exported="false" />
         <activity
@@ -22,22 +25,23 @@
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".SummaryActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
