@@ -19,4 +19,11 @@
     <string name="textViewChairs">Chairs</string>
     <string name="txtViewBeds">Beds</string>
     <string name="textViewTables">Tables</string>
+
+    <string name="textChekoutTitle">Customer Details</string>
+    <string name="textCardDetailTitle">Card Details</string>
+    <string name="textItemSummary">Total items in cart</string>
+    <string name="ButtonBuyNow">Buy Now</string>
+    <string name="textDeliveryAddress">Shipping Address</string>
+    <string name="textDeliveryAdd">Delivery Address</string>
 </resources>
