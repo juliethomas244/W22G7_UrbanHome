@@ -14,23 +14,26 @@ import java.util.List;
 
 public class BedActivity extends AppCompatActivity {
     GridView gridViewBeds;
-    List<String> bedNames = new ArrayList<>(Arrays.asList("DHP Victoria Full Size Metal Daybed - White",
-            "Genuine Leather Ultimate Bed","Mercer41 Wulff Velvet Upholstered Platform Bed Colour: Grey, Size: Queen Wood",
-            "Modway Ollie Bed Frame Colour: Silver, Size: King","Sandro Asher Platform Bed Size: King",
-            "Zinus Joseph 6 Inch Platforma Low Profile Bed Frame"));
-
-    List<Integer> bedPics = new ArrayList<>(Arrays.asList(R.drawable.dhpvictoria,
-            R.drawable.genuineleather, R.drawable.mercerwulff, R.drawable.modwayollie,
-            R.drawable.sandroasher, R.drawable.zinusjoseph));
+    List<String> bedNames;
+    List<Integer> bedPics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bed);
 
+        bedNames = new ArrayList<>(Arrays.asList("DHP Victoria Full Size Metal Daybed - White",
+                "Genuine Leather Ultimate Bed","Mercer41 Wulff Velvet Upholstered Platform Bed Colour: Grey, Size: Queen Wood",
+                "Modway Ollie Bed Frame Colour: Silver, Size: King","Sandro Asher Platform Bed Size: King",
+                "Zinus Joseph 6 Inch Platforma Low Profile Bed Frame"));
+
+        bedPics = new ArrayList<>(Arrays.asList(R.drawable.dhpvictoria,
+                R.drawable.genuineleather, R.drawable.mercerwulff, R.drawable.modwayollie,
+                R.drawable.sandroasher, R.drawable.zinusjoseph));
+
         gridViewBeds = findViewById(R.id.gridViewBeds);
-        BedAdapter bedAdapter = new BedAdapter(bedNames, bedPics);
-        gridViewBeds.setAdapter(bedAdapter);
+        CategoriesAdapter adapter = new CategoriesAdapter(bedNames, bedPics);
+        gridViewBeds.setAdapter(adapter);
 
         gridViewBeds.setNumColumns(2);
         gridViewBeds.setVerticalSpacing(8);
