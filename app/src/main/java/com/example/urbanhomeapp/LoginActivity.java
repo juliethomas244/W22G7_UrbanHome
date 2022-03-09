@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
                         // App code
-                        startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                        startActivity(new Intent(LoginActivity.this,HomeActivity.class));
                         finish();
                     }
 
@@ -141,7 +141,7 @@ public class LoginActivity extends AppCompatActivity {
 
         void LoginSucess(){
             finish();
-            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
             startActivity(intent);
         }
 
