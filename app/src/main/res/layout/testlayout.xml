@@ -45,31 +45,57 @@
                 android:text="Delivery" />
         </RadioGroup>
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/editTextCheckoutName"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextCheckoutName_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
             android:hint="Enter your name"
-            android:inputType="textPersonName"
             android:minHeight="48dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0">
 
-        <EditText
-            android:id="@+id/editTextCheckoutEmail"
-            android:layout_width="wrap_content"
+            <!--this is the actual edit text which takes the input-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextCheckoutName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editTextCheckoutEmail_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
             android:hint="Enter your email"
-            android:inputType="textPersonName"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCheckoutName" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextCheckoutName_layout"
+            >
+
+            <!--this is the actual edit text which takes the input-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextCheckoutEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
 
         <LinearLayout
             android:layout_marginTop="10dp"
@@ -79,7 +105,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCheckoutEmail">
+            app:layout_constraintTop_toBottomOf="@+id/editTextCheckoutEmail_layout">
 
             <TextView
                 android:id="@+id/textViewDeliveryTitle"
@@ -90,14 +116,23 @@
                 android:textStyle="bold"
                 android:textSize="18dp"/>
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/editTextDeliveryAddress"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextDeliveryAddress_layout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="15"
-                android:hint="Delivery Address (Street address, unit number)"
-                android:inputType="textPersonName"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:layout_marginStart="100dp"
+                android:layout_marginEnd="100dp"
+                android:hint="@string/textDeliveryAdd">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextDeliveryAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            
 
             <EditText
                 android:id="@+id/editTextProvince"
