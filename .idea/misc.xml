@@ -18,11 +18,15 @@
         <entry key="..\:/Users/user/Desktop/Douglas/Mobile App Development/UrbanHome/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Douglas/Mobile App Development/UrbanHome/app/src/main/res/layout/activity_login_acivity.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/Douglas/Mobile App Development/UrbanHome/app/src/main/res/layout/activity_main.xml" value="0.3463541666666667" />
+        <entry key="app/src/main/res/layout/activity_checkout.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_customer_support.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_description.xml" value="0.17255434782608695" />
+        <entry key="app/src/main/res/layout/activity_feedback.xml" value="0.13044579533941236" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.17255434782608695" />
         <entry key="app/src/main/res/layout/activity_login_acivity.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.17255434782608695" />
+        <entry key="app/src/main/res/layout/activity_policies.xml" value="0.13044579533941236" />
         <entry key="app/src/main/res/layout/layout_menu.xml" value="0.17255434782608695" />
       </map>
     </option>
