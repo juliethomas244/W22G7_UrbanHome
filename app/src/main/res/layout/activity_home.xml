@@ -132,11 +132,11 @@
                 app:srcCompat="@drawable/icons_teapot" />
 
             <ImageView
-                android:id="@+id/imgViewTeaPotWood"
+                android:id="@+id/imgViewWallShelf"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="0dp"
-                app:srcCompat="@drawable/icons_teapotwood" />
+                app:srcCompat="@drawable/icons_wallshelf" />
 
             <ImageView
                 android:id="@+id/imgViewThinChair"
