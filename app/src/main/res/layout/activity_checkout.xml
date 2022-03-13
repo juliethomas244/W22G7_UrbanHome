@@ -208,78 +208,7 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textViewCardDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:text="@string/textCardDetailTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hiddenCheckoutLayout" />
 
-
-        <LinearLayout
-            android:id="@+id/carddetails_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/textViewCardDetails"
-            >
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editTextCardNumber_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
-                android:hint="Enter card number">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextCardNumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editTextCardExpiry_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
-                android:hint="Enter card expiry(mm/yy)">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextCardExpiry"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editTextCardPin_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
-                android:hint="Enter card pin(3 digits)">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextCardPin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearItem_layout"
@@ -289,7 +218,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/carddetails_layout"
+            app:layout_constraintTop_toBottomOf="@+id/hiddenCheckoutLayout"
             >
 
             <TextView
@@ -349,20 +278,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="@string/ButtonBuyNow"
-            app:layout_constraintEnd_toStartOf="@+id/buttonBuyNowPaypal"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearcost_layout" />
 
-
-        <Button
-            android:id="@+id/buttonBuyNowPaypal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/ButtonPaypal"
-            app:layout_constraintStart_toEndOf="@id/buttonBuyNow"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearcost_layout" />
 
         <TextView
             android:id="@+id/paypalStatus"
@@ -375,7 +294,7 @@
             android:textAlignment="center"
             android:textColor="@color/purple_200"
             android:textSize="20sp"
-            app:layout_constraintTop_toBottomOf="@+id/buttonBuyNowPaypal"
+            app:layout_constraintTop_toBottomOf="@+id/buttonBuyNow"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 

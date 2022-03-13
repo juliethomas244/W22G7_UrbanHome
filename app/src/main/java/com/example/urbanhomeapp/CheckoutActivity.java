@@ -30,8 +30,8 @@ public class CheckoutActivity extends AppCompatActivity {
         //Paypal client ID generated from sandbox account
     public static final String clientKey = "AeQuAGkwumjw_CDMJkYaCj3JY0zv-G2VHGKfB6FHOk-b71ttERUl72HoQezt-XnKROvlf2j1T48W-eRU";
     public static final int PAYPAL_REQUEST_CODE = 123;
-    TextView txttotalcost = findViewById(R.id.textViewCostTotal);
-    TextView paypalStatus = findViewById(R.id.paypalStatus);
+    TextView txttotalcost;
+    TextView paypalStatus;
                 // Paypal Configuration Object
     private static PayPalConfiguration config = new PayPalConfiguration()
             // Start with mock environment.  When ready,
@@ -48,8 +48,8 @@ public class CheckoutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_checkout);
         RadioGroup radioGroupDel = findViewById(R.id.radioGroup);
         Button btnBuyNow = findViewById(R.id.buttonBuyNow);
-        Button btnPaypal = findViewById(R.id.buttonBuyNowPaypal);
-
+        txttotalcost = findViewById(R.id.textViewCostTotal);
+        paypalStatus = findViewById(R.id.paypalStatus);
         //ListView listViewDelivery = findViewById(R.id.listViewDelivery);
         LinearLayout hiddenDeliveryLayout = findViewById(R.id.hiddenCheckoutLayout);
 
@@ -78,13 +78,6 @@ public class CheckoutActivity extends AppCompatActivity {
 
 
         btnBuyNow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(CheckoutActivity.this, "Order placed", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        btnPaypal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 makePayment();
