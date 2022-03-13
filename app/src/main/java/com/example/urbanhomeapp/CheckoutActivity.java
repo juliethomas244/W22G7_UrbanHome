@@ -17,6 +17,7 @@ public class CheckoutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_checkout);
         RadioGroup radioGroupDel = findViewById(R.id.radioGroup);
         Button btnBuyNow = findViewById(R.id.buttonBuyNow);
+        Button btnPaypal = findViewById(R.id.buttonBuyNowPaypal);
         //ListView listViewDelivery = findViewById(R.id.listViewDelivery);
         LinearLayout hiddenDeliveryLayout = findViewById(R.id.hiddenCheckoutLayout);
 
@@ -48,7 +49,6 @@ public class CheckoutActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(CheckoutActivity.this, "Order placed", Toast.LENGTH_SHORT).show();
-
             }
         });
     }

@@ -49,8 +49,8 @@
             android:id="@+id/editTextCheckoutName_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginEnd="100dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
             android:hint="Enter your name"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,8 +75,8 @@
             android:id="@+id/editTextCheckoutEmail_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginEnd="100dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
             android:hint="Enter your email"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -95,7 +95,19 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
+        <TextView
+            android:id="@+id/textViewDeliveryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textDeliveryAddress"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:textSize="18dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCheckoutEmail_layout"/>
 
         <LinearLayout
             android:layout_marginTop="10dp"
@@ -105,23 +117,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCheckoutEmail_layout">
+            app:layout_constraintTop_toBottomOf="@+id/textViewDeliveryTitle">
 
-            <TextView
-                android:id="@+id/textViewDeliveryTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/textDeliveryAddress"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:textSize="18dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/editTextDeliveryAddress_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginEnd="100dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
                 android:hint="@string/textDeliveryAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -132,103 +136,161 @@
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
-            
 
-            <EditText
-                android:id="@+id/editTextProvince"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextProvince_layout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Province"
-                android:inputType="textPersonName"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:hint="Province">
 
-            <EditText
-                android:id="@+id/editTextPostalCode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Postal Code"
-                android:inputType="textPersonName"
-                tools:ignore="TouchTargetSizeCheck" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextProvince"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    />
 
-            <EditText
-                android:id="@+id/editTextCity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="City"
-                android:inputType="textPersonName"
-                tools:ignore="TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/editTextCountry"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextPostalCode_layout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Country"
-                android:inputType="textPersonName"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:hint="Postal Code">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextPostalCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextCity_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:hint="City">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextCountry_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:hint="Country">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
         </LinearLayout>
-
 
         <TextView
             android:id="@+id/textViewCardDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textSize="18dp"
             android:text="@string/textCardDetailTitle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hiddenCheckoutLayout" />
 
-        <EditText
-            android:id="@+id/editTextCardNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:hint="Enter card number"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewCardDetails" />
 
-        <EditText
-            android:id="@+id/editTextCardExpiry"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/carddetails_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Enter card expiry(mm/yy)"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCardNumber" />
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCardDetails"
+            >
 
-        <EditText
-            android:id="@+id/editTextCardPin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Enter card pin(3 digits)"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCardExpiry" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextCardNumber_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:hint="Enter card number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextCardNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextCardExpiry_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:hint="Enter card expiry(mm/yy)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCardExpiry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTextCardPin_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:hint="Enter card pin(3 digits)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCardPin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
 
         <TextView
             android:id="@+id/textViewItemsSummary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:text="@string/textItemSummary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCardPin" />
+            app:layout_constraintTop_toBottomOf="@+id/carddetails_layout" />
 
         <Button
             android:id="@+id/buttonBuyNow"
