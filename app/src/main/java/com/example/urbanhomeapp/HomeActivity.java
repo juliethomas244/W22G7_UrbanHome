@@ -102,7 +102,7 @@ public class HomeActivity extends AppCompatActivity {
         imgViewCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,CheckoutActivity.class);
+                Intent intent = new Intent(HomeActivity.this,CartActivity.class);
                 startActivity(intent);
             }
         });
