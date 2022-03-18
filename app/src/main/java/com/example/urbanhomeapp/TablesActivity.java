@@ -2,6 +2,7 @@ package com.example.urbanhomeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,16 +17,17 @@ public class TablesActivity extends AppCompatActivity {
     GridView gridviewTables;
     List<String> tableNames;
     List<Integer> tablePics;
+    int idx = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tables);
 
-        tableNames = new ArrayList<>(Arrays.asList("House of Hampton Caputo 47.5 Console Table"
-                , "VASAGLE Round End Table with Storage Shelf",
-                "ABS Plastic Folding Table - 72 x 30 x 29, Beige", "Griffin Reclaimed Wood Round Coffee Table",
-                "Clearwater 37.75'' Console Table", "Alexious 47'' Console Table By Everly Quinn"));
+        tableNames = new ArrayList<>(Arrays.asList("House of Hampton Console Table"
+                , "Round End Table with Storage Shelf",
+                "ABS Plastic Folding Table", "Wood Round Coffee Table",
+                "Clearwater Console Table", "Alexious Console Table"));
 
         tablePics = new ArrayList<>(Arrays.asList(R.drawable.hampton,
                 R.drawable.endtable, R.drawable.abs, R.drawable.griffin,
@@ -46,7 +48,57 @@ public class TablesActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(TablesActivity.this, "You Clicked "+ tableNames.get(i), Toast.LENGTH_SHORT).show();
+                //                Toast.makeText(TablesActivity.this, "You Clicked "+ tableNames.get(i), Toast.LENGTH_SHORT).show();
+                switch (i) {
+                    case 0:
+                        idx = 31;
+                        Intent result = new Intent(TablesActivity.this, DescriptionActivity.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("IDX", idx);
+                        result.putExtras(bundle);
+                        startActivity(result);
+                        break;
+                    case 1:
+                        idx = 32;
+                        result = new Intent(TablesActivity.this, DescriptionActivity.class);
+                        bundle = new Bundle();
+                        bundle.putInt("IDX", idx);
+                        result.putExtras(bundle);
+                        startActivity(result);
+                        break;
+                    case 2:
+                        idx = 33;
+                        result = new Intent(TablesActivity.this, DescriptionActivity.class);
+                        bundle = new Bundle();
+                        bundle.putInt("IDX", idx);
+                        result.putExtras(bundle);
+                        startActivity(result);
+                        break;
+                    case 3:
+                        idx = 34;
+                        result = new Intent(TablesActivity.this, DescriptionActivity.class);
+                        bundle = new Bundle();
+                        bundle.putInt("IDX", idx);
+                        result.putExtras(bundle);
+                        startActivity(result);
+                        break;
+                    case 4:
+                        idx = 35;
+                        result = new Intent(TablesActivity.this, DescriptionActivity.class);
+                        bundle = new Bundle();
+                        bundle.putInt("IDX", idx);
+                        result.putExtras(bundle);
+                        startActivity(result);
+                        break;
+                    case 5:
+                        idx = 36;
+                        result = new Intent(TablesActivity.this, DescriptionActivity.class);
+                        bundle = new Bundle();
+                        bundle.putInt("IDX", idx);
+                        result.putExtras(bundle);
+                        startActivity(result);
+                        break;
+                }
             }
         });
     }
