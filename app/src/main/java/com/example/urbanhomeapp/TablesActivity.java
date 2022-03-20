@@ -40,14 +40,14 @@ public class TablesActivity extends AppCompatActivity {
         gridviewTables.setScrollBarSize(3);
         gridviewTables.setNumColumns(2);
 
-
         gridviewTables.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(TablesActivity.this, "You Clicked "+ tableNames.get(i), Toast.LENGTH_SHORT).show();
             }
         });
+
+
     }
 }
