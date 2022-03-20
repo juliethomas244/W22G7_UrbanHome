@@ -22,7 +22,7 @@ public class BedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bed);
 
-        bedNames = new ArrayList<>(Arrays.asList("DHP Victoria Full Size Metal Daybed - White",
+        bedNames = new ArrayList<>(Arrays.asList("DHP Victoria Full Size Metal Bed - White",
                 "Genuine Leather Ultimate Bed","Mercer41 Wulff Velvet Upholstered Platform Bed Colour: Grey, Size: Queen Wood",
                 "Modway Ollie Bed Frame Colour: Silver, Size: King","Sandro Asher Platform Bed Size: King",
                 "Zinus Joseph 6 Inch Platforma Low Profile Bed Frame"));
