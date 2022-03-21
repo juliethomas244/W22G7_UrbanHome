@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
+
     void signOut(){
         gsc.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
