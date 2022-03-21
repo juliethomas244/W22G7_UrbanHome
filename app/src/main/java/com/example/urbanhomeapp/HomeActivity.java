@@ -29,12 +29,6 @@ public class HomeActivity extends AppCompatActivity {
     List<Integer> imgPics = new ArrayList<>(
             Arrays.asList(R.drawable.icons_chair, R.drawable.icons_bed, R.drawable.icons_table)
     );
-    ImageView imgViewSofa;
-    ImageView imgViewTeaPot;
-    ImageView imgViewWallShelf;
-    ImageView imgViewThinChair;
-    int idx = -1;
-    ImageView imgViewMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,44 +44,8 @@ public class HomeActivity extends AppCompatActivity {
         gridViewCategory.setHorizontalSpacing(5);
         gridViewCategory.setScrollBarSize(3);
 
-
-        imgViewSofa = findViewById(R.id.imgViewSofa);
-        imgViewTeaPot = findViewById(R.id.imgViewTeaPot);
-        imgViewWallShelf = findViewById(R.id.imgViewWallShelf);
-        imgViewThinChair = findViewById(R.id.imgViewThinChair);
-
-        imgViewSofa.setOnClickListener((View view) -> {
-            idx = 0;
-            Intent result = new Intent(HomeActivity.this, DescriptionActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putInt("IDX", idx);
-            result.putExtras(bundle);
-            startActivity(result);
-        });
-        imgViewTeaPot.setOnClickListener((View view) -> {
-            idx = 1;
-            Intent result = new Intent(HomeActivity.this, DescriptionActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putInt("IDX", idx);
-            result.putExtras(bundle);
-            startActivity(result);
-        });
-        imgViewWallShelf.setOnClickListener((View view) -> {
-            idx = 2;
-            Intent result = new Intent(HomeActivity.this, DescriptionActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putInt("IDX", idx);
-            result.putExtras(bundle);
-            startActivity(result);
-        });
-        imgViewThinChair.setOnClickListener((View view) -> {
-            idx = 3;
-            Intent result = new Intent(HomeActivity.this, DescriptionActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putInt("IDX", idx);
-            result.putExtras(bundle);
-            startActivity(result);
-        });
+        editTextSearch = findViewById(R.id.editTextSearch);
+        String search = editTextSearch.getText().toString();
 
 
         //When the user clicks any item from the category, the app will take the user to the next
@@ -108,14 +66,10 @@ public class HomeActivity extends AppCompatActivity {
         imgViewCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,CartActivity.class);
+                Intent intent = new Intent(HomeActivity.this,CheckoutActivity.class);
                 startActivity(intent);
             }
         });
 
-        imgViewMenu = findViewById(R.id.imgViewMenu);
-        imgViewMenu.setOnClickListener((View view )->{
-            startActivity(new Intent(HomeActivity.this, MenuActivity.class));
-        });
     }
 }

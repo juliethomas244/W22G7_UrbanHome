@@ -9,14 +9,12 @@
     <ImageView
         android:id="@+id/imageViewCategories"
         android:layout_width="167dp"
-        android:layout_height="120dp"
+        android:layout_height="143dp"
         app:srcCompat="@drawable/denchevlounge" />
 
     <TextView
         android:id="@+id/textViewCategories"
         android:layout_width="168dp"
         android:layout_height="45dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="TextView"
-        android:textStyle="bold" />
+        android:text="TextView" />
 </LinearLayout>

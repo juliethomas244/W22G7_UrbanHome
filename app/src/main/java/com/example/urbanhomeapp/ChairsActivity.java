@@ -1,13 +1,15 @@
 package com.example.urbanhomeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Build;
 
-import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,10 +17,8 @@ import java.util.List;
 
 public class ChairsActivity extends AppCompatActivity {
     GridView gridViewChairs;
-
     List<String> itemDesc;
     List<Integer> itemPics;
-    int idx = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,57 +45,7 @@ public class ChairsActivity extends AppCompatActivity {
         gridViewChairs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Toast.makeText(ChairsActivity.this, "You Clicked "+ itemDesc.get(i), Toast.LENGTH_SHORT).show();
-                switch (i) {
-                    case 0:
-                        idx = 21;
-                        Intent result = new Intent(ChairsActivity.this, DescriptionActivity.class);
-                        Bundle bundle = new Bundle();
-                        bundle.putInt("IDX", idx);
-                        result.putExtras(bundle);
-                        startActivity(result);
-                        break;
-                    case 1:
-                        idx = 22;
-                        result = new Intent(ChairsActivity.this, DescriptionActivity.class);
-                        bundle = new Bundle();
-                        bundle.putInt("IDX", idx);
-                        result.putExtras(bundle);
-                        startActivity(result);
-                        break;
-                    case 2:
-                        idx = 23;
-                        result = new Intent(ChairsActivity.this, DescriptionActivity.class);
-                        bundle = new Bundle();
-                        bundle.putInt("IDX", idx);
-                        result.putExtras(bundle);
-                        startActivity(result);
-                        break;
-                    case 3:
-                        idx = 24;
-                        result = new Intent(ChairsActivity.this, DescriptionActivity.class);
-                        bundle = new Bundle();
-                        bundle.putInt("IDX", idx);
-                        result.putExtras(bundle);
-                        startActivity(result);
-                        break;
-                    case 4:
-                        idx = 25;
-                        result = new Intent(ChairsActivity.this, DescriptionActivity.class);
-                        bundle = new Bundle();
-                        bundle.putInt("IDX", idx);
-                        result.putExtras(bundle);
-                        startActivity(result);
-                        break;
-                    case 5:
-                        idx = 26;
-                        result = new Intent(ChairsActivity.this, DescriptionActivity.class);
-                        bundle = new Bundle();
-                        bundle.putInt("IDX", idx);
-                        result.putExtras(bundle);
-                        startActivity(result);
-                        break;
-                }
+                Toast.makeText(ChairsActivity.this, "You Clicked "+ itemDesc.get(i), Toast.LENGTH_SHORT).show();
             }
         });
 
