@@ -22,8 +22,37 @@
 
     <string name="textChekoutTitle">Customer Details</string>
     <string name="textCardDetailTitle">Card Details</string>
-    <string name="textItemSummary">Total items in cart</string>
+    <string name="textItemSummary">Number of items in cart</string>
+    <string name="textItemCost">Cost of items in cart</string>
     <string name="ButtonBuyNow">Buy Now</string>
+    <string name="ButtonPaypal">Paypal</string>
     <string name="textDeliveryAddress">Shipping Address</string>
     <string name="textDeliveryAdd">Delivery Address</string>
+
+    <string name="txtReturn">Return Policy</string>
+    <string name="txtReturnDesc">When you receive something you weren\'t expecting, we feel your pain.
+        That\'s why we\'re here for you every step of the way in your shopping journey, including returns and exchanges!
+        \n\nWe have a 30-day return policy, which means you have
+        <b>30 days after receiving your item to request a return.</b></string>
+    <string name="txtViewReturn2"><b>How to return an item?</b>
+        \n- Step 1: Please contact us at service@urbanhome.com indicating the item(s) you would like to return,
+        the order number, the reason for the return, and a photo of the item in its current state. If there are quality
+        issues, please provide images of the exact faulty parts of said items and the tag(including the QC sticker).
+        \n- Step 2: If your return is accepted, we’ll send you the instructions on how and where to send your package.
+        \n- Step 3: Once your returned items are back at our warehouse, they will be inspected, processed and our
+        convenient customer service team will then get you a speedy refund!
+    </string>
+    <string name="feedback">
+        <b>Get in touch! We would love to hear from you.</b>
+        \n\nWe believe in delivering excellent customer service and we are dedicated to satisfying our customers.
+        \n\nHave any questions or suggestions? Feel free to contact us! We will reply within 24 hours. (If you do not receive a response within 24 hours, please kindly check your spam folder first and follow up with us.)
+    </string>
+    <string name="txtContactUs">Contact Us</string>
+    <string name="txtEmail">Email</string>
+    <string name="txtViewMsg">Message</string>
+    <string name="btnSend">SEND</string>
+    <string name="txtCustomer">Customer Support</string>
+    <string name="txtCustomerSupport">
+    We will respond ASAP, and remember to check your spam emails!\n\n\nCustomer Service:\n\nservice@urbanhome.com\n\nAddress:\n\nSUITE 207, 4/A LAWS COMM PLAZA\n\n622 MAIN RD\n\nVANCOUVER, BC, CANADA
+    </string>
 </resources>
