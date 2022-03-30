@@ -29,10 +29,6 @@ public class BedActivity extends AppCompatActivity {
                 "Modway Ollie Bed Frame Colour: Silver, Size: King","Sandro Asher Platform Bed Size: King",
                 "Zinus Joseph 6 Inch Platforma Low Profile Bed Frame"));
 
-        bedNames = new ArrayList<>(Arrays.asList("Victoria Queen Bed",
-                "Genuine Leather Twin Bed","Upholstered Platform Bed",
-                "Ollie Bed","Sandro Asher Platform King Bed",
-                "Platforma Low Profile Bed"));
 
         bedPics = new ArrayList<>(Arrays.asList(R.drawable.dhpvictoria,
                 R.drawable.genuineleather, R.drawable.mercerwulff, R.drawable.modwayollie,
@@ -50,7 +46,7 @@ public class BedActivity extends AppCompatActivity {
         gridViewBeds.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Toast.makeText(BedActivity.this, "You Clicked "+ bedNames.get(i), Toast.LENGTH_SHORT).show();
+
                 switch (i) {
                     case 0:
                         idx = 11;
