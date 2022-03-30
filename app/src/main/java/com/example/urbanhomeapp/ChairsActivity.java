@@ -14,8 +14,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ChairsActivity extends AppCompatActivity {
-    GridView gridViewChairs;
 
+    GridView gridViewChairs;
     List<String> itemDesc;
     List<Integer> itemPics;
     int idx = -1;
@@ -24,6 +24,15 @@ public class ChairsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chairs);
+
+        arrays();
+        controls();
+        gridViewChairsOnItemClickListener();
+
+    }
+
+
+    public void arrays(){
         itemDesc = new ArrayList<>(Arrays.asList("Renay 29'' Wide Papasan Chair",
                 "Lollie Executive Chair", "Denchev Tufted Armless Chaise Lounge Chair","Harrietta 33'' " +
                         "Wide Tufted Velvet Wingback Chair", "Louise Velvet Task Chair", "Classic Sofa Chair"));
@@ -31,21 +40,22 @@ public class ChairsActivity extends AppCompatActivity {
         itemPics = new ArrayList<>(Arrays.asList(R.drawable.renaychair,
                 R.drawable.lolliechair, R.drawable.denchevlounge, R.drawable.wingbackchair,
                 R.drawable.louisechair, R.drawable.sofalazy));
+    }
 
+    public void controls(){
         gridViewChairs = findViewById(R.id.gridViewChairs);
-
         CategoriesAdapter adapter = new CategoriesAdapter(itemDesc, itemPics);
         gridViewChairs.setAdapter(adapter);
-
         gridViewChairs.setNumColumns(2);
         gridViewChairs.setVerticalSpacing(8);
         gridViewChairs.setHorizontalSpacing(8);
         gridViewChairs.setScrollBarSize(3);
+    }
 
+    public void gridViewChairsOnItemClickListener(){
         gridViewChairs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Toast.makeText(ChairsActivity.this, "You Clicked "+ itemDesc.get(i), Toast.LENGTH_SHORT).show();
                 switch (i) {
                     case 0:
                         idx = 21;
@@ -99,5 +109,9 @@ public class ChairsActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
+
+
 }
