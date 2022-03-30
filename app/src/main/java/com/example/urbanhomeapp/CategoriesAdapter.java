@@ -18,6 +18,10 @@ public class CategoriesAdapter extends BaseAdapter {
         this.itemPics = itemPics;
     }
 
+    public CategoriesAdapter(List<String> itemDesc) {
+        this.itemDesc = itemDesc;
+    }
+
     @Override
     public int getCount() {
         return itemDesc.size();
