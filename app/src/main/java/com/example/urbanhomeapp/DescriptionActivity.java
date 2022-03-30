@@ -2,15 +2,21 @@ package com.example.urbanhomeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.urbanhomeapp.model.Cart;
+import com.google.gson.Gson;
+
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DescriptionActivity extends AppCompatActivity {
@@ -18,6 +24,11 @@ public class DescriptionActivity extends AppCompatActivity {
     TextView txtViewDesc;
     TextView txtViewPrice;
     ImageView imgViewBack;
+    LocalStorage localStorage;
+    Context context;
+    Gson gson;
+    List<Cart> cartList = new ArrayList<>();
+    Button btnAddtocart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +39,16 @@ public class DescriptionActivity extends AppCompatActivity {
         txtViewDesc = findViewById(R.id.txtViewDesc);
         txtViewPrice = findViewById(R.id.txtViewPrice);
         imgViewBack = findViewById(R.id.imgViewBack);
+        btnAddtocart = findViewById(R.id.btnCart);
+
+        Bundle bundle = getIntent().getExtras();
+        int idx = getIntent().getExtras().getInt("IDX", -1);
+
 
         imgViewBack.setOnClickListener((View view) -> {
             startActivity(new Intent(DescriptionActivity.this, HomeActivity.class));
         });
-        Bundle bundle = getIntent().getExtras();
-        int idx = getIntent().getExtras().getInt("IDX", -1);
+
         try {
             switch (idx){
                 case 0:
@@ -198,5 +213,22 @@ public class DescriptionActivity extends AppCompatActivity {
             ex.printStackTrace();
 
         }
+
+        btnAddtocart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String StrID = String.valueOf(idx);
+                Cart cart = new Cart(StrID, "abcd","abcd", "$", "100", "random attribute", "10", "1000");
+                //cartList = ((HomeActivity) context).getCartList();
+                cartList = ((HomeActivity) context).getCartList();
+                cartList.add(cart);
+                String cartStr = gson.toJson(cartList);
+                //Log.d("CART", cartStr);
+                localStorage.setCart(cartStr);
+                ((AddorRemoveCallbacks) context).onAddProduct();
+                Toast.makeText(getApplicationContext(), "Added to cart", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

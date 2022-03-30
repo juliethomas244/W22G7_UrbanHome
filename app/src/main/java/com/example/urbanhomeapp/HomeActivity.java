@@ -19,6 +19,11 @@ import android.widget.Toast;
 
 import com.example.urbanhomeapp.databinding.ActivityMainBinding;
 
+import com.example.urbanhomeapp.model.Cart;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -31,6 +36,16 @@ public class HomeActivity extends AppCompatActivity {
 
     GridView gridViewCategory;
     ImageView imgViewCart;
+    
+    List<Cart> cartList = new ArrayList<Cart>();
+    Gson gson;
+    LocalStorage localStorage;
+    List<String> imgNames = new ArrayList<>(
+            Arrays.asList("Chair","Bed","Table")
+    );
+    List<Integer> imgPics = new ArrayList<>(
+            Arrays.asList(R.drawable.icons_chair, R.drawable.icons_bed, R.drawable.icons_table)
+    );
     ImageView imgViewSofa;
     ImageView imgViewTeaPot;
     ImageView imgViewWallShelf;
@@ -190,4 +205,17 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+
+    public List<Cart> getCartList() {
+        if (localStorage.getCart() != null) {
+            String jsonCart = localStorage.getCart();
+            //Log.d("CART : ", jsonCart);
+            Type type = new TypeToken<List<Cart>>() {
+            }.getType();
+            cartList = gson.fromJson(jsonCart, type);
+            return cartList;
+        }
+        return cartList;
+    }
+
 }
