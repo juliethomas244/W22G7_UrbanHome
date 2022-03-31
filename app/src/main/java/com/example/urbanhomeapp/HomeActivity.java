@@ -31,8 +31,8 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity {
 
 //    ActivityMainBinding binding; try this out
-    List<String> imgNames;
-    List<Integer> imgPics;
+//    List<String> imgNames;
+//    List<Integer> imgPics;
 
     GridView gridViewCategory;
     ImageView imgViewCart;
