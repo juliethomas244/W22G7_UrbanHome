@@ -1,6 +1,7 @@
 package com.example.urbanhomeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.urbanhomeapp.model.Cart;
+import com.example.urbanhomeapp.model.CartItem;
 import com.google.gson.Gson;
 
 import org.w3c.dom.Text;
@@ -29,6 +31,7 @@ public class DescriptionActivity extends AppCompatActivity {
     Gson gson;
     List<Cart> cartList = new ArrayList<>();
     Button btnAddtocart;
+    private CartDao cartDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -214,19 +217,29 @@ public class DescriptionActivity extends AppCompatActivity {
 
         }
 
+        CartDatabase database = Room.databaseBuilder(getApplicationContext(), CartDatabase.class,
+                "cart_db").fallbackToDestructiveMigration().allowMainThreadQueries().build();
+        cartDao = database.cartDao();
+
         btnAddtocart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String StrID = String.valueOf(idx);
-                Cart cart = new Cart(StrID, "abcd","abcd", "$", "100", "random attribute", "10", "1000");
-                //cartList = ((HomeActivity) context).getCartList();
-                cartList = ((HomeActivity) context).getCartList();
-                cartList.add(cart);
-                String cartStr = gson.toJson(cartList);
-                //Log.d("CART", cartStr);
-                localStorage.setCart(cartStr);
-                ((AddorRemoveCallbacks) context).onAddProduct();
+//                String StrID = String.valueOf(idx);
+//                Cart cart = new Cart(StrID, "abcd","abcd", "$", "100", "random attribute", "10", "1000");
+//                //cartList = ((HomeActivity) context).getCartList();
+//                cartList = ((HomeActivity) context).getCartList();
+//                cartList.add(cart);
+//                String cartStr = gson.toJson(cartList);
+//                //Log.d("CART", cartStr);
+//                localStorage.setCart(cartStr);
+//                ((AddorRemoveCallbacks) context).onAddProduct();
                 Toast.makeText(getApplicationContext(), "Added to cart", Toast.LENGTH_SHORT).show();
+
+                CartItem cart = new CartItem();
+                cart.setName(getIntent().getExtras().getString("NAME", "error"));
+                cart.setQuantity(1);
+                cart.setPrice(Double.parseDouble(txtViewPrice.getText().toString().substring(1)));
+                cartDao.insertItem(cart);
             }
         });
 

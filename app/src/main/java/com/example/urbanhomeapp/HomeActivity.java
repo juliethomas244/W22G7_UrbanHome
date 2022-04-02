@@ -36,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
 
     GridView gridViewCategory;
     ImageView imgViewCart;
-    
+
     List<Cart> cartList = new ArrayList<Cart>();
     Gson gson;
     LocalStorage localStorage;

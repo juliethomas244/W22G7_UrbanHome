@@ -18,6 +18,7 @@ public class TablesActivity extends AppCompatActivity {
     List<String> tableNames;
     List<Integer> tablePics;
     int idx = -1;
+    String name = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,8 @@ public class TablesActivity extends AppCompatActivity {
                         Intent result = new Intent(TablesActivity.this, DescriptionActivity.class);
                         Bundle bundle = new Bundle();
                         bundle.putInt("IDX", idx);
+                        name = tableNames.get(i);
+                        bundle.putString("NAME", name);
                         result.putExtras(bundle);
                         startActivity(result);
                         break;
@@ -61,6 +64,8 @@ public class TablesActivity extends AppCompatActivity {
                         result = new Intent(TablesActivity.this, DescriptionActivity.class);
                         bundle = new Bundle();
                         bundle.putInt("IDX", idx);
+                        name = tableNames.get(i);
+                        bundle.putString("NAME", name);
                         result.putExtras(bundle);
                         startActivity(result);
                         break;
@@ -69,6 +74,8 @@ public class TablesActivity extends AppCompatActivity {
                         result = new Intent(TablesActivity.this, DescriptionActivity.class);
                         bundle = new Bundle();
                         bundle.putInt("IDX", idx);
+                        name = tableNames.get(i);
+                        bundle.putString("NAME", name);
                         result.putExtras(bundle);
                         startActivity(result);
                         break;
@@ -77,6 +84,8 @@ public class TablesActivity extends AppCompatActivity {
                         result = new Intent(TablesActivity.this, DescriptionActivity.class);
                         bundle = new Bundle();
                         bundle.putInt("IDX", idx);
+                        name = tableNames.get(i);
+                        bundle.putString("NAME", name);
                         result.putExtras(bundle);
                         startActivity(result);
                         break;
@@ -85,6 +94,8 @@ public class TablesActivity extends AppCompatActivity {
                         result = new Intent(TablesActivity.this, DescriptionActivity.class);
                         bundle = new Bundle();
                         bundle.putInt("IDX", idx);
+                        name = tableNames.get(i);
+                        bundle.putString("NAME", name);
                         result.putExtras(bundle);
                         startActivity(result);
                         break;
@@ -93,13 +104,13 @@ public class TablesActivity extends AppCompatActivity {
                         result = new Intent(TablesActivity.this, DescriptionActivity.class);
                         bundle = new Bundle();
                         bundle.putInt("IDX", idx);
+                        name = tableNames.get(i);
+                        bundle.putString("NAME", name);
                         result.putExtras(bundle);
                         startActivity(result);
                         break;
                 }
             }
         });
-
-
     }
 }
