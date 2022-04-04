@@ -56,4 +56,5 @@
     We will respond ASAP, and remember to check your spam emails!\n\n\nCustomer Service:\n\nservice@urbanhome.com\n\nAddress:\n\nSUITE 207, 4/A LAWS COMM PLAZA\n\n622 MAIN RD\n\nVANCOUVER, BC, CANADA
     </string>
     <string name="searchItemHint">Seach for Item</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>
