@@ -27,7 +27,7 @@ import java.util.Arrays;
 public class LoginActivity extends AppCompatActivity {
 
     EditText username, password;
-    Button btnsignin;
+    Button btnsignin, btnsignup;
 
 
     GoogleSignInOptions gso;
@@ -35,7 +35,9 @@ public class LoginActivity extends AppCompatActivity {
     ImageView googleBtn;
     ImageView fbBtn;
     CallbackManager callbackManager;
-    Button changing;
+    DBHelper myDB;
+
+    //Button changing;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,15 +69,38 @@ public class LoginActivity extends AppCompatActivity {
         username = findViewById(R.id.editTextLoginEmail);
         password = findViewById(R.id.editTextLoginPassword);
         btnsignin = findViewById(R.id.buttonLogin);
+        btnsignup = findViewById(R.id.buttonSignUp);
+
+        myDB = new DBHelper(this);
 
         btnsignin.setOnClickListener((View view) -> {
-            if (username.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
-                Toast.makeText(LoginActivity.this, "LOGIN SUCCESSFUL", Toast.LENGTH_SHORT).show();
-                LoginSucess();
+            String user = username.getText().toString();
+            String pass = password.getText().toString();
+
+            if (user.equals("") || pass.equals("")) {
+                Toast.makeText(LoginActivity.this, "Please enter the credentials.", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(LoginActivity.this, "LOGIN Failed! ", Toast.LENGTH_SHORT).show();
+                Boolean result = myDB.checkusernamePassword(user, pass);
+
+                if (result == true) {
+                    Toast.makeText(LoginActivity.this, "LOGIN SUCCESSFUL", Toast.LENGTH_SHORT).show();
+                    LoginSuccess();
+
+                } else {
+                    Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                }
+
 
             }
+
+        });
+
+        btnsignup.setOnClickListener((View view) -> {
+            finish();
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
+
+
         });
 
         googleBtn = findViewById(R.id.google_btn);
@@ -99,7 +124,7 @@ public class LoginActivity extends AppCompatActivity {
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         if (acct != null) {
-            LoginSucess();
+            LoginSuccess();
         }
 
 
@@ -130,7 +155,7 @@ public class LoginActivity extends AppCompatActivity {
 
             try {
                 task.getResult(ApiException.class);
-                LoginSucess();
+                LoginSuccess();
             } catch (ApiException e) {
                 Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
             }
@@ -139,7 +164,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-        void LoginSucess(){
+        void LoginSuccess(){
             finish();
             Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
             startActivity(intent);

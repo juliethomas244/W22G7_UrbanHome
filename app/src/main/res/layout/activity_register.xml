@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgimg"
+    android:padding="20dp"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/registerimageview"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/registernow" />
+
+    <EditText
+        android:id="@+id/editTextusername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/registerimageview"
+        android:layout_marginTop="32dp"
+        android:background="#30ffffff"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerimageview" />
+
+    <EditText
+        android:id="@+id/editTextpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextusername"
+        android:layout_marginTop="32dp"
+        android:background="#30ffffff"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextusername" />
+
+    <EditText
+        android:id="@+id/editTextpasswordconfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextpassword"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="481dp"
+        android:background="#30ffffff"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextpassword" />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextpasswordconfirm"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="-308dp"
+        android:layout_marginEnd="120dp"
+        android:backgroundTint="@color/design_default_color_secondary_variant"
+        android:text="REGISTER"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextpasswordconfirm" />
+
+    <Button
+        android:id="@+id/buttonLoginLaypout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonRegister"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="-308dp"
+        android:layout_marginEnd="120dp"
+        android:backgroundTint="@color/design_default_color_secondary_variant"
+        android:text="Click here to Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
+
+
+
+
+
+</RelativeLayout>
