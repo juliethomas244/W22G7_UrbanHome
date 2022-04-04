@@ -3,7 +3,9 @@ package com.example.urbanhomeapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -155,7 +157,7 @@ public class LoginActivity extends AppCompatActivity {
 
             try {
                 task.getResult(ApiException.class);
-                LoginSuccess();
+                handleSignInResult(task);
             } catch (ApiException e) {
                 Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
             }
@@ -163,12 +165,41 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        try {
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            if (account != null){
+                String personName = account.getDisplayName();
+                String personGivenName = account.getGivenName();
+                String personFamilyName = account.getFamilyName();
+                String personEmail = account.getEmail();
+                String personId = account.getId();
+                Uri personPhoto = account.getPhotoUrl();
 
-        void LoginSuccess(){
+                Toast.makeText(LoginActivity.this, "Email: " + personEmail + "successfully Logged in", Toast.LENGTH_SHORT).show();
+
+            }
+
+            // Signed in successfully, show authenticated UI.
+            //GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+
+            LoginSuccess();
+
+        } catch (ApiException e) {
+            // The ApiException status code indicates the detailed failure reason.
+            // Please refer to the GoogleSignInStatusCodes class reference for more information.
+            Log.d("Google Error", e.getMessage());
+            Toast.makeText(LoginActivity.this, "Google Sign in error", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+
+    void LoginSuccess(){
             finish();
             Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
             startActivity(intent);
-        }
+    }
 
     }
 

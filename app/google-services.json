@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "40267324244",
+    "project_id": "urbanhome-209b5",
+    "storage_bucket": "urbanhome-209b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:40267324244:android:3935c59d0ff94b626186c1",
+        "android_client_info": {
+          "package_name": "com.example.urbanhomeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "40267324244-mm8ikujesqm3o3jkh303emprasblamdk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.urbanhomeapp",
+            "certificate_hash": "6dd0e87719a4c04d771859f481f1ea0aba8349e8"
+          }
+        },
+        {
+          "client_id": "40267324244-i9rnnkdam0m6jg7tkmdfpdj4at9kdmo0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-YlV7MCZw7837pc6hXwO2dw3_pyT79EQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "40267324244-i9rnnkdam0m6jg7tkmdfpdj4at9kdmo0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
