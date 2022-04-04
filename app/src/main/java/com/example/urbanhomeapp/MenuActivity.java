@@ -14,7 +14,7 @@ import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
     List<String> menu = new ArrayList<>(
-            Arrays.asList("Sign In", "Sign Out", "Cart", "Policies", "Feedback", "Customer Support")
+            Arrays.asList("Sign In", "Sign Out", "Cart", "Policies", "Feedback", "Customer Support", "View Location")
     );
     ListView listViewMenu;
 
@@ -41,6 +41,8 @@ public class MenuActivity extends AppCompatActivity {
                     case 5:
                         startActivity(new Intent(MenuActivity.this, CustomerSupportActivity.class));
                         break;
+                    case 6:
+                        startActivity(new Intent(MenuActivity.this, MapsActivity.class));
                 }
             }
         });
