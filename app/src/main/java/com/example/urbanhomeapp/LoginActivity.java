@@ -176,7 +176,7 @@ public class LoginActivity extends AppCompatActivity {
                 String personId = account.getId();
                 Uri personPhoto = account.getPhotoUrl();
 
-                Toast.makeText(LoginActivity.this, "Email: " + personEmail + "successfully Logged in", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Email: " + personEmail + " successfully Logged in", Toast.LENGTH_SHORT).show();
 
             }
 
