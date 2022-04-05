@@ -1,5 +1,6 @@
 package com.example.urbanhomeapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,17 +13,30 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+
+import com.facebook.AccessToken;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+
+
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FacebookAuthProvider;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Arrays;
 
@@ -37,6 +51,8 @@ public class LoginActivity extends AppCompatActivity {
     ImageView googleBtn;
     ImageView fbBtn;
     CallbackManager callbackManager;
+    FirebaseAuth mAuth;
+
     DBHelper myDB;
 
     //Button changing;
@@ -46,6 +62,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_acivity);
 
+        mAuth = FirebaseAuth.getInstance();
+        FacebookSdk.sdkInitialize(getApplicationContext());
+
+        fbBtn = findViewById(R.id.facebook_btn);
         callbackManager = CallbackManager.Factory.create();
 
         LoginManager.getInstance().registerCallback(callbackManager,
@@ -53,8 +73,9 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
                         // App code
-                        startActivity(new Intent(LoginActivity.this,HomeActivity.class));
-                        finish();
+                        //startActivity(new Intent(LoginActivity.this,HomeActivity.class));
+                        //finish();
+                        handleFacebookAccessToken(loginResult.getAccessToken());
                     }
 
                     @Override
@@ -106,7 +127,11 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         googleBtn = findViewById(R.id.google_btn);
-        fbBtn = findViewById(R.id.facebook_btn);
+
+
+
+
+
 
         fbBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -192,6 +217,26 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this, "Google Sign in error", Toast.LENGTH_SHORT).show();
 
         }
+    }
+
+    private void handleFacebookAccessToken(AccessToken token) {
+
+        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            LoginSuccess();
+
+                        } else {
+                            Toast.makeText(LoginActivity.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                });
+
     }
 
 
