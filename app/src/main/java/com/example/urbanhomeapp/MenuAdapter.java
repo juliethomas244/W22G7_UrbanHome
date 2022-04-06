@@ -6,10 +6,21 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.List;
 
 public class MenuAdapter extends BaseAdapter {
     List<String> menu;
+    FirebaseAuth mAuth ;
+    GoogleSignInClient mGoogle ;
+    //mAuth = FirebaseAuth.getInstance();
+
+    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+    //mGoogle = GoogleSignIn.getClient(this, gso);
 
     public MenuAdapter(List<String> menu) {
         this.menu = menu;

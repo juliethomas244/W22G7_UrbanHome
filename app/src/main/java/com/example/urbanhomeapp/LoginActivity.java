@@ -1,6 +1,7 @@
 package com.example.urbanhomeapp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,6 +17,8 @@ import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
 import com.facebook.appevents.AppEventsLogger;
 
 
@@ -38,9 +41,14 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
+
+    String fullName;
 
     EditText username, password;
     Button btnsignin, btnsignup;
@@ -72,9 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                 new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
-                        // App code
-                        //startActivity(new Intent(LoginActivity.this,HomeActivity.class));
-                        //finish();
+
                         handleFacebookAccessToken(loginResult.getAccessToken());
                     }
 
@@ -129,10 +135,6 @@ public class LoginActivity extends AppCompatActivity {
         googleBtn = findViewById(R.id.google_btn);
 
 
-
-
-
-
         fbBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -161,6 +163,28 @@ public class LoginActivity extends AppCompatActivity {
                 signIn();
             }
         });
+
+        //will delete this code later if this doesnt work
+
+        /*AccessToken accessToken = AccessToken.getCurrentAccessToken();
+
+        GraphRequest request = GraphRequest.newMeRequest(
+                accessToken, new GraphRequest.GraphJSONObjectCallback() {
+                    @Override
+                    public void onCompleted(JSONObject jsonObject,GraphResponse graphResponse) {
+                        try{
+                            fullName = jsonObject.getString("name");
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                        }
+
+                    }
+                }
+        );
+        Bundle parameters = new Bundle();
+        parameters.putString("fields", "id,name");
+        request.setParameters(parameters);
+        request.executeAsync();*/
 
 
     }
@@ -195,18 +219,17 @@ public class LoginActivity extends AppCompatActivity {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             if (account != null){
                 String personName = account.getDisplayName();
-                String personGivenName = account.getGivenName();
-                String personFamilyName = account.getFamilyName();
+
                 String personEmail = account.getEmail();
                 String personId = account.getId();
-                Uri personPhoto = account.getPhotoUrl();
 
-                Toast.makeText(LoginActivity.this, "Email: " + personEmail + " successfully Logged in", Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(LoginActivity.this, "Name: " + personName + " successfully Logged in", Toast.LENGTH_SHORT).show();
+
 
             }
 
             // Signed in successfully, show authenticated UI.
-            //GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
 
             LoginSuccess();
 
@@ -219,6 +242,9 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+
+
+
     private void handleFacebookAccessToken(AccessToken token) {
 
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
@@ -228,6 +254,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(LoginActivity.this, "User successfully Logged in", Toast.LENGTH_SHORT).show();
                             LoginSuccess();
 
                         } else {
