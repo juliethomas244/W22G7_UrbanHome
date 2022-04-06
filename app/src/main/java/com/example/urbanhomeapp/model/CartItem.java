@@ -1,14 +1,19 @@
 package com.example.urbanhomeapp.model;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
 public class CartItem {
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
     private int id = 0;
+    @ColumnInfo(name = "name")
     private String name;
+    @ColumnInfo(name = "price")
     private double price;
+    @ColumnInfo(name = "quantity")
     private int quantity;
 
     public int getId() {

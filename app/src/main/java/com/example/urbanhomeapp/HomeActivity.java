@@ -30,10 +30,6 @@ import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
-//    ActivityMainBinding binding; try this out
-//    List<String> imgNames;
-//    List<Integer> imgPics;
-
     GridView gridViewCategory;
     ImageView imgViewCart;
 
@@ -42,6 +38,9 @@ public class HomeActivity extends AppCompatActivity {
     LocalStorage localStorage;
     List<String> imgNames = new ArrayList<>(
             Arrays.asList("Chair","Bed","Table")
+    );
+    List<String> itemNames = new ArrayList<>(
+            Arrays.asList("Black sofa", "Tea pot", "Wall shelf", "Thin chair")
     );
     List<Integer> imgPics = new ArrayList<>(
             Arrays.asList(R.drawable.icons_chair, R.drawable.icons_bed, R.drawable.icons_table)
@@ -54,6 +53,7 @@ public class HomeActivity extends AppCompatActivity {
     SearchView SearchViewItem;
     ListView listViewSearch;
     int idx = -1;
+    String name;
 
     List<String> searchItems ;
 
@@ -107,7 +107,7 @@ public class HomeActivity extends AppCompatActivity {
         imgViewCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this,CartActivity.class);
+                Intent intent = new Intent(HomeActivity.this,CartActivity2.class);
                 startActivity(intent);
             }
         });
@@ -145,6 +145,8 @@ public class HomeActivity extends AppCompatActivity {
             Intent result = new Intent(HomeActivity.this, DescriptionActivity.class);
             Bundle bundle = new Bundle();
             bundle.putInt("IDX", idx);
+            name = itemNames.get(idx);
+            bundle.putString("NAME", name);
             result.putExtras(bundle);
             startActivity(result);
         });
@@ -156,6 +158,8 @@ public class HomeActivity extends AppCompatActivity {
             Intent result = new Intent(HomeActivity.this, DescriptionActivity.class);
             Bundle bundle = new Bundle();
             bundle.putInt("IDX", idx);
+            name = itemNames.get(idx);
+            bundle.putString("NAME", name);
             result.putExtras(bundle);
             startActivity(result);
         });
@@ -167,6 +171,8 @@ public class HomeActivity extends AppCompatActivity {
             Intent result = new Intent(HomeActivity.this, DescriptionActivity.class);
             Bundle bundle = new Bundle();
             bundle.putInt("IDX", idx);
+            name = itemNames.get(idx);
+            bundle.putString("NAME", name);
             result.putExtras(bundle);
             startActivity(result);
         });
@@ -178,6 +184,8 @@ public class HomeActivity extends AppCompatActivity {
             Intent result = new Intent(HomeActivity.this, DescriptionActivity.class);
             Bundle bundle = new Bundle();
             bundle.putInt("IDX", idx);
+            name = itemNames.get(idx);
+            bundle.putString("NAME", name);
             result.putExtras(bundle);
             startActivity(result);
         });

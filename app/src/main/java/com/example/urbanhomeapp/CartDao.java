@@ -23,4 +23,10 @@ public interface CartDao {
 
     @Query("SELECT * FROM CartItem")
     List<CartItem> getAllCartItems();
+
+    @Query("SELECT * FROM CartItem WHERE id=:ItemId")
+    List<CartItem> GetItemWithIds(List<String> ItemId);
+
+    @Query("DELETE FROM CartItem WHERE name=:itemName")
+    int deleteItemWithName(String itemName);
 }

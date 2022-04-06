@@ -5,7 +5,6 @@
     <string name="TextViewLoginTitle">Urban Home</string>
 
 
-
     <string name="facebook_app_id">496888788781445</string>
     <string name="fb_login_protocol_scheme">fb1234</string>
     <string name="facebook_client_token">d203c65861c11e855ad4c6a241ee7b85</string>
@@ -58,4 +57,16 @@
     </string>
     <string name="searchItemHint">Seach for Item</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="txtViewCheckOut">Check Out</string>
+    <string name="txtViewPrice">$0</string>
+    <string name="txtViewChkOut">CHECK OUT</string>
+    <string name="Item">Item</string>
+    <string name="Quantity">Quantity</string>
+    <string name="Price">Price</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Save">Save</string>
+    <string name="txtChangeQtt">Quantity:</string>
+    <string name="ex">1</string>
+    <string name="dollarSign">$</string>
+    <string name="txtViewDelete">Remove</string>
 </resources>

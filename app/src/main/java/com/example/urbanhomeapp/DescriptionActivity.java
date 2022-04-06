@@ -29,9 +29,11 @@ public class DescriptionActivity extends AppCompatActivity {
     LocalStorage localStorage;
     Context context;
     Gson gson;
-    List<Cart> cartList = new ArrayList<>();
+    List<CartItem> itemsList = new ArrayList<>();
     Button btnAddtocart;
     private CartDao cartDao;
+    boolean nameExist = false;
+    Toast curToast = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -233,13 +235,34 @@ public class DescriptionActivity extends AppCompatActivity {
 //                //Log.d("CART", cartStr);
 //                localStorage.setCart(cartStr);
 //                ((AddorRemoveCallbacks) context).onAddProduct();
-                Toast.makeText(getApplicationContext(), "Added to cart", Toast.LENGTH_SHORT).show();
 
+                itemsList = database.cartDao().getAllCartItems();
                 CartItem cart = new CartItem();
                 cart.setName(getIntent().getExtras().getString("NAME", "error"));
                 cart.setQuantity(1);
                 cart.setPrice(Double.parseDouble(txtViewPrice.getText().toString().substring(1)));
-                cartDao.insertItem(cart);
+
+                for (int i=0; i<itemsList.size(); i++){
+                    if (itemsList.get(i).getName().equals(cart.getName())){
+                        nameExist = true;
+                        break;
+                    }
+                }
+
+                if (!nameExist){
+                    if (curToast != null){
+                        curToast.cancel();
+                    }
+                    cartDao.insertItem(cart);
+                    curToast = Toast.makeText(getApplicationContext(), "Added to cart", Toast.LENGTH_SHORT);
+                    curToast.show();
+                }else{
+                    if (curToast != null){
+                        curToast.cancel();
+                    }
+                    curToast = Toast.makeText(getApplicationContext(), "This item is already in the cart.", Toast.LENGTH_SHORT);
+                    curToast.show();
+                }
             }
         });
 
