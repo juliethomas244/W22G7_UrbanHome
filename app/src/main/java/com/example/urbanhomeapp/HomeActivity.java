@@ -72,8 +72,6 @@ public class HomeActivity extends AppCompatActivity {
         gridViewCategoryOnItemClick();
         imageViewCart();
         imgViewMenu();
-        ItemSearchView();
-
     }
 
     public void arrays(){
@@ -98,8 +96,6 @@ public class HomeActivity extends AppCompatActivity {
         imgViewTeaPot = findViewById(R.id.imgViewTeaPot);
         imgViewWallShelf = findViewById(R.id.imgViewWallShelf);
         imgViewThinChair = findViewById(R.id.imgViewThinChair);
-        SearchViewItem = findViewById(R.id.SearchViewItem);
-        listViewSearch = findViewById(R.id.listViewSearch);
 
     }
 
@@ -197,22 +193,6 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    public void ItemSearchView(){
-        SearchViewItem.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                SearchItemAdapter searchItemAdapter = new SearchItemAdapter(searchItems);
-                listViewSearch.setAdapter(searchItemAdapter);
-                searchItemAdapter.getFilter().filter(s);
-                return true;
-            }
-        });
-    }
 
     public List<Cart> getCartList() {
         if (localStorage.getCart() != null) {
