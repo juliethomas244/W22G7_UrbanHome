@@ -32,6 +32,8 @@ public class CheckoutActivity extends AppCompatActivity {
     public static final int PAYPAL_REQUEST_CODE = 123;
     TextView txttotalcost;
     TextView paypalStatus;
+    TextView NoofItems;
+    Double price,qtt;
                 // Paypal Configuration Object
     private static PayPalConfiguration config = new PayPalConfiguration()
             // Start with mock environment.  When ready,
@@ -50,9 +52,14 @@ public class CheckoutActivity extends AppCompatActivity {
         Button btnBuyNow = findViewById(R.id.buttonBuyNow);
         txttotalcost = findViewById(R.id.textViewCostTotal);
         paypalStatus = findViewById(R.id.paypalStatus);
+        NoofItems = findViewById(R.id.textViewItemsTotal);
         //ListView listViewDelivery = findViewById(R.id.listViewDelivery);
         LinearLayout hiddenDeliveryLayout = findViewById(R.id.hiddenCheckoutLayout);
-
+        Bundle bundle = getIntent().getExtras();
+        price = getIntent().getExtras().getDouble("ITEMPRICE", 0);
+        qtt = getIntent().getExtras().getDouble("ITEMQTT", 0);
+        NoofItems.setText(String.valueOf(qtt));
+        txttotalcost.setText(String.valueOf(price));
 
         radioGroupDel.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

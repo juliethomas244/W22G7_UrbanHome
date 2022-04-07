@@ -27,6 +27,7 @@ public class CartActivity2 extends AppCompatActivity {
     TextView txtViewCheckOut;
     ImageView imgHome;
     double ttlPrice = 0;
+    double ttlQty = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +52,14 @@ public class CartActivity2 extends AppCompatActivity {
             try{
                 listViewItems.setOnItemClickListener((AdapterView<?> adapterView, View view, int i, long l) -> {
                     Intent result = new Intent(CartActivity2.this, ItemEditActivity.class);
+
                     Bundle bundle = new Bundle();
                     bundle.putString("ITEMNAME", itemsList.get(i).getName());
                     bundle.putDouble("ITEMPRICE", (itemsList.get(i).getPrice() / itemsList.get(i).getQuantity()));
                     bundle.putInt("ITEMQTT", itemsList.get(i).getQuantity());
                     result.putExtras(bundle);
                     startActivity(result);
+
                 });
 
                 itemsList = db.cartDao().getAllCartItems();
@@ -65,6 +68,7 @@ public class CartActivity2 extends AppCompatActivity {
                 ttlPrice = 0;
                 for (int i = 0; i < itemsList.size(); i++) {
                     ttlPrice += itemsList.get(i).getPrice();
+                    ttlQty +=itemsList.get(i).getQuantity();
                 }
 
                 txtViewTtlPrice.setText("$"+String.valueOf(ttlPrice));
@@ -76,7 +80,13 @@ public class CartActivity2 extends AppCompatActivity {
         });
 
         txtViewCheckOut.setOnClickListener((View view) -> {
-            startActivity(new Intent(CartActivity2.this, CheckoutActivity.class));
+            Intent checkoutResult = new Intent(CartActivity2.this, CheckoutActivity.class);
+            Bundle bundle = new Bundle();
+//                bundle.putDouble("ITEMPRICE", (itemsList.get(i).getPrice() / itemsList.get(i).getQuantity()));
+            bundle.putDouble("ITEMPRICE", ttlPrice);
+            bundle.putDouble("ITEMQTT", ttlQty);
+            checkoutResult.putExtras(bundle);
+            startActivity(checkoutResult);
         });
     }
 }
