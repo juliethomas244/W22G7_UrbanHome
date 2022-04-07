@@ -31,6 +31,7 @@ public class DescriptionActivity extends AppCompatActivity {
     Gson gson;
     List<CartItem> itemsList = new ArrayList<>();
     Button btnAddtocart;
+    Button btnBuyNow;
     private CartDao cartDao;
     boolean nameExist = false;
     Toast curToast = null;
@@ -45,6 +46,7 @@ public class DescriptionActivity extends AppCompatActivity {
         txtViewPrice = findViewById(R.id.txtViewPrice);
         imgViewBack = findViewById(R.id.imgViewBack);
         btnAddtocart = findViewById(R.id.btnCart);
+        btnBuyNow = findViewById(R.id.btnBuy);
 
         Bundle bundle = getIntent().getExtras();
         int idx = getIntent().getExtras().getInt("IDX", -1);
@@ -263,6 +265,19 @@ public class DescriptionActivity extends AppCompatActivity {
                     curToast = Toast.makeText(getApplicationContext(), "This item is already in the cart.", Toast.LENGTH_SHORT);
                     curToast.show();
                 }
+            }
+        });
+
+        btnBuyNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent checkoutResult = new Intent(DescriptionActivity.this, CheckoutActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putDouble("ITEMPRICE", Double.parseDouble(txtViewPrice.getText().toString().substring(1)));
+                bundle.putDouble("ITEMQTT", 1);
+                checkoutResult.putExtras(bundle);
+                startActivity(checkoutResult);
+
             }
         });
 

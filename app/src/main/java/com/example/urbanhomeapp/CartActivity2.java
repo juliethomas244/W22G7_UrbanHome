@@ -82,7 +82,6 @@ public class CartActivity2 extends AppCompatActivity {
         txtViewCheckOut.setOnClickListener((View view) -> {
             Intent checkoutResult = new Intent(CartActivity2.this, CheckoutActivity.class);
             Bundle bundle = new Bundle();
-//                bundle.putDouble("ITEMPRICE", (itemsList.get(i).getPrice() / itemsList.get(i).getQuantity()));
             bundle.putDouble("ITEMPRICE", ttlPrice);
             bundle.putDouble("ITEMQTT", ttlQty);
             checkoutResult.putExtras(bundle);
