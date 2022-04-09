@@ -164,29 +164,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        //will delete this code later if this doesnt work
-
-        /*AccessToken accessToken = AccessToken.getCurrentAccessToken();
-
-        GraphRequest request = GraphRequest.newMeRequest(
-                accessToken, new GraphRequest.GraphJSONObjectCallback() {
-                    @Override
-                    public void onCompleted(JSONObject jsonObject,GraphResponse graphResponse) {
-                        try{
-                            fullName = jsonObject.getString("name");
-                        }catch (JSONException e){
-                            e.printStackTrace();
-                        }
-
-                    }
-                }
-        );
-        Bundle parameters = new Bundle();
-        parameters.putString("fields", "id,name");
-        request.setParameters(parameters);
-        request.executeAsync();*/
-
-
     }
 
     void signIn(){
@@ -224,7 +201,7 @@ public class LoginActivity extends AppCompatActivity {
                 String personId = account.getId();
 
 
-                Toast.makeText(LoginActivity.this, "Name: " + personName + " successfully Logged in", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, " " + personName + " successfully Logged in", Toast.LENGTH_SHORT).show();
 
 
             }

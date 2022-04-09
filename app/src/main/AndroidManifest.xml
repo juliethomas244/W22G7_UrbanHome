@@ -49,9 +49,6 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".CartActivity"
-            android:exported="false" />
-        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>

@@ -53,9 +53,9 @@ public class CardPayment extends AppCompatActivity {
         cardForm.setPayBtnClickListner(new OnPayBtnClickListner() {
             @Override
             public void onClick(Card card) {
-                Toast.makeText(CardPayment.this, "Name : "+card.getName()+" | CVC : "
-                        + card.getLast4(), Toast.LENGTH_SHORT).show();
+
                 Toast.makeText(CardPayment.this, "Payment Successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CardPayment.this, "Order Received", Toast.LENGTH_SHORT).show();
 
                 ExecutorService executorService = Executors.newSingleThreadExecutor();
                 executorService.execute(()->{
