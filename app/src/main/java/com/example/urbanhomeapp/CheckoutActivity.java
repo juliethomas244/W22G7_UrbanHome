@@ -117,10 +117,17 @@ public class CheckoutActivity extends AppCompatActivity {
                         Toast.makeText(CheckoutActivity.this,
                                 "Please enter City",
                                 Toast.LENGTH_SHORT).show();
-                    }else if (deliveryCountry.getText().toString().isEmpty()) {
+                    }else if(deliveryCountry.getText().toString().isEmpty()) {
                         Toast.makeText(CheckoutActivity.this,
                                 "Please enter Country",
                                 Toast.LENGTH_SHORT).show();
+                    }else {
+
+
+                        Intent result = new Intent(CheckoutActivity.this, CardPayment.class);
+                        bundle.putDouble("ITEMPRICE", price);
+                        result.putExtras(bundle);
+                        startActivity(result);
                     }
 
                 }
