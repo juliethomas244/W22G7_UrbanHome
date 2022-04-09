@@ -51,7 +51,10 @@
         <entry key="app/src/main/res/layout/activity_item_edit.xml" value="0.23641304347826086" />
         <entry key="app/src/main/res/layout/activity_login_acivity.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_order_details.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/layout_cartitems.xml" value="0.23641304347826086" />
+        <entry key="app/src/main/res/layout/layout_orderdetails.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/row_cart.xml" value="0.19610507246376813" />
       </map>
     </option>
   </component>

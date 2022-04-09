@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UrbanHomeApp">
         <activity
+            android:name=".OrderDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".CardPayment"
             android:exported="false" />
         <activity

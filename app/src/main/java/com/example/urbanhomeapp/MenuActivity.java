@@ -25,7 +25,7 @@ import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
     List<String> menu = new ArrayList<>(
-            Arrays.asList("Sign Out", "Cart", "Policies", "Feedback", "Customer Support", "View Location")
+            Arrays.asList("Sign Out", "Order Details", "Policies", "Feedback", "Customer Support", "View Location")
     );
     ListView listViewMenu;
     GoogleSignInClient mGoogleSignInClient;
@@ -68,9 +68,9 @@ public class MenuActivity extends AppCompatActivity {
                             startActivity(new Intent(MenuActivity.this, LoginActivity.class));
                             Toast.makeText(MenuActivity.this, "User Signed Out Successfully", Toast.LENGTH_SHORT).show();
                         }
-
-
-
+                        break;
+                    case 1:
+                        startActivity(new Intent(MenuActivity.this, OrderDetailsActivity.class));
                         break;
                     case 2:
                         startActivity(new Intent(MenuActivity.this, PoliciesActivity.class));
@@ -83,6 +83,7 @@ public class MenuActivity extends AppCompatActivity {
                         break;
                     case 5:
                         startActivity(new Intent(MenuActivity.this, MapsActivity.class));
+                        break;
                 }
             }
 

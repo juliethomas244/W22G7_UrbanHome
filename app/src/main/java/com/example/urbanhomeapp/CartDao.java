@@ -15,11 +15,17 @@ public interface CartDao {
     @Insert
     void insertItem(CartItem cartItem);
 
+    @Insert
+    Long[] insertItemsFromList(List<CartItem> cartItems);
+
     @Update
     void updateItem(CartItem cartItem);
 
     @Delete
     void deleteItem(CartItem cartItem);
+
+    @Delete
+    void deleItemsFromList(List<CartItem> cartItems);
 
     @Query("SELECT * FROM CartItem")
     List<CartItem> getAllCartItems();

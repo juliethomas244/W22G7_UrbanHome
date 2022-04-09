@@ -69,4 +69,6 @@
     <string name="ex">1</string>
     <string name="dollarSign">$</string>
     <string name="txtViewDelete">Remove</string>
+    <string name="txtOrders">Order Details</string>
+    <string name="txtViewItem1">Items</string>
 </resources>
