@@ -40,7 +40,7 @@ public class CardPayment extends AppCompatActivity {
         CartDao cartDao = db.cartDao();
 
         CartDatabase db2 = Room.databaseBuilder(getApplicationContext(), CartDatabase.class,
-                "cart2_db").fallbackToDestructiveMigration().allowMainThreadQueries().build();
+                "orders_db").fallbackToDestructiveMigration().allowMainThreadQueries().build();
         CartDao cartDao2 = db2.cartDao();
 
         Bundle bundle = getIntent().getExtras();

@@ -25,7 +25,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order_details);
 
         CartDatabase db2 = Room.databaseBuilder(getApplicationContext(), CartDatabase.class,
-                "cart2_db").fallbackToDestructiveMigration().allowMainThreadQueries().build();
+                "orders_db").fallbackToDestructiveMigration().allowMainThreadQueries().build();
         CartDao cartDao2 = db2.cartDao();
 
         ExecutorService executorService = Executors.newSingleThreadExecutor();
