@@ -18,16 +18,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UrbanHomeApp">
         <activity
-            android:name=".OrderDetailsActivity"
+            android:name=".Activities.OrderDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".CardPayment"
+            android:name=".Activities.CardPayment"
             android:exported="false" />
         <activity
-            android:name=".ItemEditActivity"
+            android:name=".Activities.ItemEditActivity"
             android:exported="false" />
         <activity
-            android:name=".CartActivity2"
+            android:name=".Activities.CartActivity2"
             android:exported="false" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -42,14 +42,14 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".Activities.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Activities.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -60,43 +60,43 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CustomerSupportActivity"
+            android:name=".Activities.CustomerSupportActivity"
             android:exported="false" />
         <activity
-            android:name=".FeedbackActivity"
+            android:name=".Activities.FeedbackActivity"
             android:exported="false" />
         <activity
-            android:name=".PoliciesActivity"
+            android:name=".Activities.PoliciesActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".Activities.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".DescriptionActivity"
+            android:name=".Activities.DescriptionActivity"
             android:exported="false" />
         <activity
-            android:name=".CheckoutActivity"
+            android:name=".Activities.CheckoutActivity"
             android:exported="false" />
         <activity
-            android:name=".TablesActivity"
+            android:name=".Activities.TablesActivity"
             android:exported="false" />
         <activity
-            android:name=".BedActivity"
+            android:name=".Activities.BedActivity"
             android:exported="false" />
         <activity
-            android:name=".ChairsActivity"
+            android:name=".Activities.ChairsActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".Activities.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".SummaryActivity"
+            android:name=".Activities.SummaryActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activities.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="false" />
 
         <meta-data
